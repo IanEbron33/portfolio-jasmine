@@ -1,0 +1,66 @@
+﻿/* â”€â”€ Cursor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.cursor,
+.cursor-follower {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  left: -100px;
+  top: -100px;
+  /* start offscreen â€” JS sets real position */
+  transform: translate(-50%, -50%);
+}
+
+.cursor {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.cursor-follower {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(224, 39, 122, 0.4);
+  transition: width 0.25s, height 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.cursor-follower.hovered {
+  width: 52px;
+  height: 52px;
+  border-color: var(--accent);
+  background: rgba(224, 39, 122, 0.06);
+}
+
+@media (pointer:coarse) {
+
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+/* â”€â”€ Glass â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(224, 39, 122, 0.07);
+}
+
+/* â”€â”€ Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+

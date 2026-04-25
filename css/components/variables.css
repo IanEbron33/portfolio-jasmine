@@ -1,0 +1,72 @@
+﻿/* â”€â”€ FA Icon Sizing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.social-btn .fa-brands,
+.project-link-btn .fa-brands,
+.project-link-btn .fa-solid {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.contact-icon .fa-solid {
+  font-size: 18px;
+}
+
+.footer-top .fa-solid {
+  font-size: 15px;
+}
+
+.hero-badge .fa-solid {
+  font-size: 12px;
+}
+
+/* â”€â”€ Design Tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+:root {
+  --bg: #fef6fa;
+  --bg-2: #fff0f5;
+  --surface: rgba(255, 255, 255, 0.65);
+  --border: rgba(230, 100, 160, 0.18);
+  --accent: #e0277a;
+  --accent-2: #f472b6;
+  --accent-soft: #fce7f3;
+  --accent-glow: rgba(224, 39, 122, 0.22);
+  --text: #2c0d1e;
+  --text-2: #7c3f62;
+  --text-3: #c4a0b5;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-lg: 28px;
+  --font-sans: "Quicksand", system-ui, sans-serif;
+  --font-disp: "Fredoka", system-ui, sans-serif;
+  --trans: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 8px 32px rgba(224, 39, 122, 0.10);
+  --glow: 0 0 60px rgba(224, 39, 122, 0.14);
+
+  /* dark mode surfaces (referenced in overrides) */
+  --nav-bg: rgba(254, 246, 250, 0.55);
+  --nav-bg-scroll: rgba(254, 246, 250, 0.88);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --mobile-menu-bg: rgba(254, 246, 250, 0.98);
+}
+
+/* â”€â”€ Dark Theme â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+[data-theme="dark"] {
+  --bg: #140a14;
+  --bg-2: #1c101c;
+  --surface: rgba(40, 22, 40, 0.7);
+  --border: rgba(244, 114, 182, 0.15);
+  --accent: #f472b6;
+  --accent-2: #fb7ebc;
+  --accent-soft: rgba(244, 114, 182, 0.12);
+  --accent-glow: rgba(244, 114, 182, 0.3);
+  --text: #f5e8f0;
+  --text-2: #c9a0b8;
+  --text-3: #7a5068;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glow: 0 0 60px rgba(244, 114, 182, 0.2);
+
+  --nav-bg: rgba(20, 10, 20, 0.6);
+  --nav-bg-scroll: rgba(20, 10, 20, 0.88);
+  --glass-bg: rgba(35, 18, 35, 0.75);
+  --mobile-menu-bg: rgba(20, 10, 20, 0.98);
+}
+
+

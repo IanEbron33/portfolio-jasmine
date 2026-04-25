@@ -1,0 +1,102 @@
+﻿/* â”€â”€ Experience Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.exp-card {
+  overflow: hidden;
+  transition: transform var(--trans), box-shadow var(--trans);
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(224, 39, 122, 0.15);
+}
+
+/* image banner */
+.exp-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/6;
+}
+
+.exp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.exp-card:hover .exp-img {
+  transform: scale(1.06);
+}
+
+/* date badge overlaid on image */
+.exp-date-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  box-shadow: 0 4px 12px rgba(224, 39, 122, 0.35);
+}
+
+/* body */
+.exp-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+/* floating role icon */
+.exp-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1.5px solid rgba(224, 39, 122, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.exp-role {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.exp-company {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.exp-desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  font-weight: 500;
+}
+

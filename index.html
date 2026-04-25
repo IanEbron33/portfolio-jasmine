@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Personal E-Portfolio — Designer & Developer crafting purposeful digital experiences." />
+  <title>Portfolio — Alex Rivera</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Lucide Icons removed — using Font Awesome only -->
+  <!-- Font Awesome (social icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ─── Cursor ──────────────────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ─── Background ──────────────────────────────────── -->
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- ─── Nav ─────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo">E-Portfolio<span class="dot">.</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#reflection" class="nav-link">Reflection</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-grip nav-toggle-icon" id="navToggleIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Mobile Menu ──────────────────────────────────── -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#about" class="mobile-link" tabindex="-1">About</a>
+    <a href="#skills" class="mobile-link" tabindex="-1">Skills</a>
+    <a href="#experience" class="mobile-link" tabindex="-1">Experience</a>
+    <a href="#reflection" class="mobile-link" tabindex="-1">Reflection</a>
+    <a href="#contact" class="mobile-link" tabindex="-1">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ─── Hero ─────────────────────────────────────── -->
+    <section class="hero" id="hero">
+      <div class="hero-inner container">
+        <div class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> 2nd Year Student</div>
+        <h1 class="hero-name" id="heroName">Jasmine Bracamonte</h1>
+        <p class="hero-role">
+          <span class="role-static">Taking the&nbsp;</span>
+          <span class="role-dynamic" id="roleDynamic"></span>
+        </p>
+        <p class="hero-sub">
+          I'm an enthusiastic and dedicated second-year Bachelor of Secondary Education Major in Social Studies student
+          at Samar State University. I am passionate about social sciences, education, and leveraging technology to
+          create engaging learning experiences.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+          <span class="scroll-line"></span>
+          <span class="scroll-text">scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── About ─────────────────────────────────────── -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-label" data-aos="fade-up"><i class="fa-solid fa-user lbl-icon"></i> About</div>
+        <div class="about-grid">
+          <div class="about-image-wrap" data-aos="fade-right" data-aos-delay="100">
+            <div class="about-img-frame">
+              <img src="Jasmine.jpeg" alt="Alex Rivera portrait" class="about-img" />
+              <div class="about-img-accent" aria-hidden="true"></div>
+            </div>
+            <div class="about-stat-card glass" data-aos="fade-up" data-aos-delay="300">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years in SSU</span>
+            </div>
+          </div>
+          <div class="about-content" data-aos="fade-left" data-aos-delay="150">
+            <h2 class="section-title">Crafting digital experiences with intention</h2>
+            <p class="about-text"> I lived in barangay Cagtutulo, Tarangnan, Samar. I am also an SK official, serving as
+              the Secretary.
+            </p>
+            <p class="about-text">
+              My hobbies are watching Korean dramas and TikTok.
+              When I'm not in front of a screen, I usually draw and cook.
+            </p>
+            <div class="about-tags">
+              <span class="tag">MS Word</span>
+              <span class="tag">MS PowerPoint</span>
+              <span class="tag">MS Excel</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Google Sheet</span>
+              <span class="tag">ChatGPT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Skills ────────────────────────────────────── -->
+    <section class="section section--dark" id="skills">
+      <div class="container">
+        <div class="section-label" data-aos="fade-up"><i class="fa-solid fa-star lbl-icon"></i> Skills</div>
+        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">What I am good at</h2>
+        <div class="skills-grid">
+
+          <div class="skill-card glass" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-file-word"></i>
+            </div>
+            <h3 class="skill-name">MS Word</h3>
+            <p class="skill-desc">Documentation, drafting and editing research papers and reports.</p>
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-pct" data-level="90">0%</span>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="90"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass" data-aos="fade-up" data-aos-delay="160">
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </div>
+            <h3 class="skill-name">MS PowerPoint</h3>
+            <p class="skill-desc">Creating and designing slides for academic presentations.</p>
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-pct" data-level="88">0%</span>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="88"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass" data-aos="fade-up" data-aos-delay="220">
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
+            <h3 class="skill-name">MS Excel</h3>
+            <p class="skill-desc">Data entry, organization, and basic spreadsheet management.</p>
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-pct" data-level="75">0%</span>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="75"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass" data-aos="fade-up" data-aos-delay="280">
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <h3 class="skill-name">Canva</h3>
+            <p class="skill-desc">Graphic design for posters, infographics, and creative layouts.</p>
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-pct" data-level="85">0%</span>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass" data-aos="fade-up" data-aos-delay="340">
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-table-cells-large"></i>
+            </div>
+            <h3 class="skill-name">Google Sheets</h3>
+            <p class="skill-desc">Collaborative data tracking and spreadsheet management online.</p>
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-pct" data-level="78">0%</span>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="78"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass" data-aos="fade-up" data-aos-delay="400">
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3 class="skill-name">ChatGPT</h3>
+            <p class="skill-desc">AI-assisted research, content writing, and problem solving.</p>
+            <div class="skill-bar-header">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-pct" data-level="80">0%</span>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-level="80"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Experience ────────────────────────────────── -->
+    <section class="section section--dark" id="experience">
+      <div class="container">
+        <div class="section-label" data-aos="fade-up"><i class="fa-solid fa-briefcase lbl-icon"></i> Experience</div>
+        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">Where I've been</h2>
+        <div class="exp-grid">
+
+          <div class="exp-card glass" data-aos="fade-up" data-aos-delay="100">
+            <div class="exp-img-wrap">
+              <img src="Demo.jpg" alt="Experience 1" class="exp-img" />
+              <span class="exp-date-badge">2026 (Present)</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-icon-wrap">
+
+
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h3 class="exp-role">Demo Teaching</h3>
+              <span class="exp-company"><i class="fa-solid fa-building"></i> SSU: Deparment of Education</span>
+              <p class="exp-desc">Conducted a teaching demonstration at the SSU Department of Education, including
+                the preparation of instructional materials and a formal presentation</p>
+            </div>
+          </div>
+
+          <div class="exp-card glass" data-aos="fade-up" data-aos-delay="200">
+            <div class="exp-img-wrap">
+              <img src="Commuinity-Service.jpg" Experience 2" class="exp-img" />
+              <span class="exp-date-badge">2026 (Present)</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-icon-wrap">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <h3 class="exp-role">Community Service</h3>
+              <span class="exp-company"><i class="fa-solid fa-building"></i> Barangay Canlapwas</span>
+              <p class="exp-desc">Our ssection imerse in a community service in barangay Canlapwas. We distribute 
+                pamphlets and poster regarding to waste management in the community. </p>
+            </div>
+          </div>
+
+          <div class="exp-card glass" data-aos="fade-up" data-aos-delay="300">
+            <div class="exp-img-wrap">
+              <img src="Seminar-.jpg" alt="Experience 3"
+                class="exp-img" />
+              <span class="exp-date-badge">2026 (Present)</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-icon-wrap">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3 class="exp-role">Seminar Workshop</h3>
+              <span class="exp-company"><i class="fa-solid fa-building"></i> SSU, function room</span>
+              <p class="exp-desc">The Social Studies Faculties conducted a seminar workshop regarding how to formulate a lesson plan for social studies students</p>
+            </div>
+          </div>
+
+              <div class="exp-card glass" data-aos="fade-up" data-aos-delay="300">
+            <div class="exp-img-wrap">
+              <img src="Seminar-Workshop.jpg" alt="Experience 3"
+                class="exp-img" />
+              <span class="exp-date-badge">2023 - 2024</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-icon-wrap">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3 class="exp-role">Joint Delivery Voucher Program (JDVP)</h3>
+              <span class="exp-company"><i class="fa-solid fa-building"></i> PHTTI</span>
+              <p class="exp-desc">A tuition assistance program for Grade 12 learners in public Senior High School Technical-Vocational-Livelihood (SHS-TVL) tracks. 
+                It allows students to take specialized training at qualified private institutions or technical vocational institutions (TVIs) to address school resource gaps.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Reflection ──────────────────────────────── -->
+    <section class="section" id="reflection">
+      <div class="container">
+        <div class="section-label" data-aos="fade-up"><i class="fa-solid fa-book-open-reader lbl-icon"></i> Reflection</div>
+        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">My Learning Journey</h2>
+        <p class="reflection-intro centered" data-aos="fade-up" data-aos-delay="100">
+          A collection of personal reflections on technology, teaching, and growth as a pre-service educator.
+        </p>
+
+        <div class="reflection-list">
+
+          <div class="reflection-card glass" data-aos="fade-up" data-aos-delay="100">
+            <button class="reflection-toggle" aria-expanded="false">
+              <div class="reflection-num">01</div>
+              <div class="reflection-title-wrap">
+                <span class="reflection-tag"><i class="fa-solid fa-chalkboard"></i> Teaching Materials</span>
+                <h3 class="reflection-heading">Development and Use of Non-Digital or Conventional Instructional Support Materials</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down reflection-chevron"></i>
+            </button>
+            <div class="reflection-body">
+              <p>I recently designed traditional instructional materials, such as physical charts and tactile models, for a Social Studies lesson. Initially, I felt it might be tedious compared to the ease of digital tools, but I actually found the hands-on creation process quite fulfilling. The positive aspect was seeing how these tangible tools can immediately engage students without relying on internet connectivity, though they obviously lack the dynamic, real-time updates of digital media.</p>
+              <p>Analyzing this, I realized that conventional materials remain foundational and highly accessible, especially in resource-constrained educational environments where digital equity is an issue. I concluded that physical materials are not obsolete but rather a crucial component of a versatile teaching toolkit. Moving forward, I will ensure I deliberately balance high-tech tools with these reliable non-digital materials to guarantee inclusivity in my future classrooms.</p>
+            </div>
+          </div>
+
+          <div class="reflection-card glass" data-aos="fade-up" data-aos-delay="160">
+            <button class="reflection-toggle" aria-expanded="false">
+              <div class="reflection-num">02</div>
+              <div class="reflection-title-wrap">
+                <span class="reflection-tag"><i class="fa-solid fa-laptop"></i> ICT Tools</span>
+                <h3 class="reflection-heading">Select and Use ICT Tools for Teaching and Learning</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down reflection-chevron"></i>
+            </button>
+            <div class="reflection-body">
+              <p>During this unit, I explored various ICT tools like interactive quizzes and multimedia presentation software to enhance my instructional design. I felt slightly overwhelmed by the sheer volume of available applications but excited by their potential to make complex topics more accessible and engaging. Integrating these tools proved highly effective for visual storytelling, yet I noticed that selecting the right tool requires careful alignment with specific learning objectives rather than just using technology for its own sake.</p>
+              <p>The experience highlighted that pedagogy must dictate the technology, not the other way around. I concluded that my primary focus should always be on the learning outcome rather than the flashiness of the app. In future lesson planning, I will strictly evaluate an ICT tool's pedagogical value using frameworks like the TPACK model before integrating it into my teaching modules.</p>
+            </div>
+          </div>
+
+          <div class="reflection-card glass" data-aos="fade-up" data-aos-delay="220">
+            <button class="reflection-toggle" aria-expanded="false">
+              <div class="reflection-num">03</div>
+              <div class="reflection-title-wrap">
+                <span class="reflection-tag"><i class="fa-solid fa-folder-open"></i> E-Portfolio</span>
+                <h3 class="reflection-heading">Creating an E-Portfolio as a Technology Tool</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down reflection-chevron"></i>
+            </button>
+            <div class="reflection-body">
+              <p>The task involved curating my academic journey and instructional artifacts into a structured e-portfolio using a website builder. I felt a strong sense of pride assembling my work and seeing my progress, though I was initially anxious about the technical web-design aspects and formatting. Compiling this portfolio was an excellent way to visually track my growth as a pre-service teacher, allowing me to see the clear connections between the theories I've learned and how I will practically assess my future students.</p>
+              <p>It became clear that an e-portfolio is not just a static repository for grades, but a dynamic tool for continuous self-reflection and professional branding. I plan to regularly update this e-portfolio even after this course ends, treating it as a living document of my evolving teaching philosophy and technological proficiency.</p>
+            </div>
+          </div>
+
+          <div class="reflection-card glass" data-aos="fade-up" data-aos-delay="280">
+            <button class="reflection-toggle" aria-expanded="false">
+              <div class="reflection-num">04</div>
+              <div class="reflection-title-wrap">
+                <span class="reflection-tag"><i class="fa-solid fa-people-group"></i> Collaboration</span>
+                <h3 class="reflection-heading">Technology Collaborative Tools in the Digital World</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down reflection-chevron"></i>
+            </button>
+            <div class="reflection-body">
+              <p>We engaged with various collaborative platforms, such as shared online documents and digital whiteboards, to facilitate academic group work. I felt energized collaborating with peers in real-time, although coordinating schedules and navigating simultaneous edits was occasionally frustrating when versions clashed. The experience highlighted how these tools break down geographical barriers and foster collective intelligence, which is particularly useful when coordinating complex group projects like our "Piso at Pananaw" economics magazine.</p>
+              <p>However, I realized that having the technology is not enough; clear communication protocols are essential to prevent confusion and duplicated efforts in asynchronous and synchronous digital spaces. In future group endeavors, I will establish clear digital etiquette, organize file structures, and designate specific role assignments early on to maximize the efficiency of these collaborative technologies.</p>
+            </div>
+          </div>
+
+          <div class="reflection-card glass" data-aos="fade-up" data-aos-delay="340">
+            <button class="reflection-toggle" aria-expanded="false">
+              <div class="reflection-num">05</div>
+              <div class="reflection-title-wrap">
+                <span class="reflection-tag"><i class="fa-solid fa-magnifying-glass"></i> Digital Literacy</span>
+                <h3 class="reflection-heading">Digital Literacy Skills in the 21st Century</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down reflection-chevron"></i>
+            </button>
+            <div class="reflection-body">
+              <p>This topic required me to critically assess my ability to find, evaluate, and communicate information ethically in digital environments. I felt challenged to examine my own online habits and confront the inherent biases in the media I consume on a daily basis. While I am generally comfortable navigating digital spaces, systematically evaluating the credibility and nuanced perspectives in online media proved to be a complex but vital academic exercise.</p>
+              <p>I concluded that digital literacy goes far beyond basic technical operation; it is fundamentally about critical thinking, information hygiene, and responsible digital citizenship. I am committed to continuously refining my own media literacy skills and will make it a priority to teach my future students how to critically cross-reference online information to navigate an era prone to misinformation.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Contact ───────────────────────────────────── -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-label" data-aos="fade-up"><i class="fa-solid fa-heart lbl-icon"></i> Contact</div>
+        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">Let's work together</h2>
+        <p class="contact-sub centered" data-aos="fade-up" data-aos-delay="100">
+          Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you within 24 hours.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-right" data-aos-delay="150">
+            <div class="contact-item glass">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <p class="contact-label">Email</p>
+                <a href="mailto:alex@example.com" class="contact-value">alex@example.com</a>
+              </div>
+            </div>
+            <div class="contact-item glass">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <p class="contact-label">Location</p>
+                <p class="contact-value">Manila, Philippines</p>
+              </div>
+            </div>
+            <div class="contact-socials">
+              <a href="#" class="social-btn glass" aria-label="GitHub profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" class="social-btn glass" aria-label="LinkedIn profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-btn glass" aria-label="Twitter/X profile">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="#" class="social-btn glass" aria-label="Dribbble profile">
+                <i class="fa-brands fa-dribbble"></i>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form glass" id="contactForm" data-aos="fade-left" data-aos-delay="150" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email"
+                  required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project inquiry" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn--full" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-success" id="formSuccess" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#hero" class="nav-logo">JB<span class="dot">.</span></a>
+      <p class="footer-copy">&copy; 2026 Jasmine Bracamonte. Crafted with intent.</p>
+      <a href="#hero" class="footer-top" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

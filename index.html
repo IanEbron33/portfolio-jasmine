@@ -54,11 +54,75 @@
 
   <!-- ─── Mobile Menu ──────────────────────────────────── -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#about" class="mobile-link" tabindex="-1">About</a>
-    <a href="#skills" class="mobile-link" tabindex="-1">Skills</a>
-    <a href="#experience" class="mobile-link" tabindex="-1">Experience</a>
-    <a href="#reflection" class="mobile-link" tabindex="-1">Reflection</a>
-    <a href="#contact" class="mobile-link" tabindex="-1">Contact</a>
+
+    <!-- Header -->
+    <div class="mobile-menu-header">
+      <div class="mobile-menu-brand">
+        <i class="fa-solid fa-wand-magic-sparkles mobile-brand-icon"></i>
+        <div>
+          <p class="mobile-brand-name">Jasmine<span class="dot">.</span></p>
+          <p class="mobile-brand-sub">E-Portfolio</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav Items -->
+    <nav class="mobile-menu-nav">
+      <a href="#about" class="mobile-link" tabindex="-1">
+        <span class="mobile-link-icon"><i class="fa-solid fa-user"></i></span>
+        <span class="mobile-link-text">
+          <span class="mobile-link-label">About</span>
+          <span class="mobile-link-sub">Who I am</span>
+        </span>
+        <i class="fa-solid fa-chevron-right mobile-link-arrow"></i>
+      </a>
+      <a href="#skills" class="mobile-link" tabindex="-1">
+        <span class="mobile-link-icon"><i class="fa-solid fa-star"></i></span>
+        <span class="mobile-link-text">
+          <span class="mobile-link-label">Skills</span>
+          <span class="mobile-link-sub">What I'm good at</span>
+        </span>
+        <i class="fa-solid fa-chevron-right mobile-link-arrow"></i>
+      </a>
+      <a href="#experience" class="mobile-link" tabindex="-1">
+        <span class="mobile-link-icon"><i class="fa-solid fa-briefcase"></i></span>
+        <span class="mobile-link-text">
+          <span class="mobile-link-label">Experience</span>
+          <span class="mobile-link-sub">My journey</span>
+        </span>
+        <i class="fa-solid fa-chevron-right mobile-link-arrow"></i>
+      </a>
+      <a href="#reflection" class="mobile-link" tabindex="-1">
+        <span class="mobile-link-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+        <span class="mobile-link-text">
+          <span class="mobile-link-label">Reflection</span>
+          <span class="mobile-link-sub">My learning insights</span>
+        </span>
+        <i class="fa-solid fa-chevron-right mobile-link-arrow"></i>
+      </a>
+      <a href="#contact" class="mobile-link" tabindex="-1">
+        <span class="mobile-link-icon"><i class="fa-solid fa-heart"></i></span>
+        <span class="mobile-link-text">
+          <span class="mobile-link-label">Contact</span>
+          <span class="mobile-link-sub">Get in touch</span>
+        </span>
+        <i class="fa-solid fa-chevron-right mobile-link-arrow"></i>
+      </a>
+    </nav>
+
+    <!-- Footer -->
+    <div class="mobile-menu-footer">
+      <div class="mobile-socials">
+        <a href="https://www.facebook.com/jas.mine.59578" class="mobile-social" aria-label="Facebook" tabindex="-1">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@jasminebracs" class="mobile-social" aria-label="TikTok" tabindex="-1">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+      <p class="mobile-copy">&copy; 2026 Jasmine Bracamonte &middot; BSED 2</p>
+    </div>
+
   </div>
 
   <main>
@@ -104,7 +168,7 @@
             </div>
           </div>
           <div class="about-content" data-aos="fade-left" data-aos-delay="150">
-            <h2 class="section-title">Crafting digital experiences with intention</h2>
+            <h2 class="section-title">Do you want to know more about me?</h2>
             <p class="about-text"> I lived in barangay Cagtutulo, Tarangnan, Samar. I am also an SK official, serving as
               the Secretary.
             </p>
@@ -230,7 +294,7 @@
     <section class="section section--dark" id="experience">
       <div class="container">
         <div class="section-label" data-aos="fade-up"><i class="fa-solid fa-briefcase lbl-icon"></i> Experience</div>
-        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">Where I've been</h2>
+        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">My experiences</h2>
         <div class="exp-grid">
 
           <div class="exp-card glass" data-aos="fade-up" data-aos-delay="100">
@@ -398,9 +462,9 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="section-label" data-aos="fade-up"><i class="fa-solid fa-heart lbl-icon"></i> Contact</div>
-        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">Let's work together</h2>
+        <h2 class="section-title centered" data-aos="fade-up" data-aos-delay="50">Contact Me</h2>
         <p class="contact-sub centered" data-aos="fade-up" data-aos-delay="100">
-          Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you within 24 hours.
+          If you have any further questions or concerns, feel free to reach out to me.
         </p>
 
         <div class="contact-grid">
@@ -409,28 +473,22 @@
               <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
               <div>
                 <p class="contact-label">Email</p>
-                <a href="mailto:alex@example.com" class="contact-value">alex@example.com</a>
+                <a href="mailto:alex@example.com" class="contact-value">jasminebracamonte62@gmail.com</a>
               </div>
             </div>
             <div class="contact-item glass">
               <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div>
                 <p class="contact-label">Location</p>
-                <p class="contact-value">Manila, Philippines</p>
+                <p class="contact-value">Brgy. Cagtutulo, Tarangnan, Samar</p>
               </div>
             </div>
             <div class="contact-socials">
-              <a href="#" class="social-btn glass" aria-label="GitHub profile">
-                <i class="fa-brands fa-github"></i>
+              <a href="https://www.facebook.com/jas.mine.59578" class="social-btn glass" aria-label="Facebook profile">
+                <i class="fa-brands fa-facebook-f"></i>
               </a>
-              <a href="#" class="social-btn glass" aria-label="LinkedIn profile">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="social-btn glass" aria-label="Twitter/X profile">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="#" class="social-btn glass" aria-label="Dribbble profile">
-                <i class="fa-brands fa-dribbble"></i>
+              <a href="https://www.tiktok.com/@jasminebracs?_r=1&_d=f0l1a596432i2e&sec_uid=MS4wLjABAAAA58iry8bBTdXa7hpNT0Dc3iO3MGzVM0S_mwGghsIFKVhXyJiKckDzje5xw8w6n85y&share_author_id=7497814578304549906&sharer_language=en&source=h5_t&u_code=ek33gj23ll9aih&timestamp=1777104616&user_id=7497814578304549906&sec_user_id=MS4wLjABAAAA58iry8bBTdXa7hpNT0Dc3iO3MGzVM0S_mwGghsIFKVhXyJiKckDzje5xw8w6n85y&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7630284921860392721&share_link_id=1801ee3b-dbab-4489-bcea-4789f227f29c&share_app_id=1180&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb4907&social_share_type=5&enable_checksum=1" class="social-btn glass" aria-label="TikTok profile">
+                <i class="fa-brands fa-tiktok"></i>
               </a>
             </div>
           </div>
@@ -472,7 +530,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <a href="#hero" class="nav-logo">JB<span class="dot">.</span></a>
-      <p class="footer-copy">&copy; 2026 Jasmine Bracamonte. Crafted with intent.</p>
+      <p class="footer-copy">&copy; 2026 Jasmine Bracamonte - BSED 2.</p>
       <a href="#hero" class="footer-top" aria-label="Back to top">
         <i class="fa-solid fa-chevron-up"></i>
       </a>

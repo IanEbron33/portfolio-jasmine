@@ -1,33 +1,68 @@
-/* ── Init AOS ─────────────────────────────────────── */
-AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+/* ── Scroll Reveal (replaces AOS library) ─────────── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const delay = parseInt(el.dataset.aosDelay) || 0;
+      setTimeout(() => el.classList.add('aos-animate'), delay);
+      revealObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-/* ── Custom Cursor ────────────────────────────────── */
+// Wait for the browser to paint the initial hidden state before observing
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.querySelectorAll('[data-aos]').forEach(el => revealObserver.observe(el));
+  });
+});
+
+
+/* ── Custom Cursor (optimized — stops when idle) ──── */
 const cursor   = document.getElementById('cursor');
 const follower = document.getElementById('cursorFollower');
-let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-let fx = mx, fy = my;
+let mx = -100, my = -100, fx = -100, fy = -100;
+let cursorMoving = false;
+let cursorTimer = null;
 
-// Position cursor dot immediately on mousemove
 document.addEventListener('mousemove', e => {
   mx = e.clientX;
   my = e.clientY;
   cursor.style.left = mx + 'px';
   cursor.style.top  = my + 'px';
+  if (!cursorMoving) { cursorMoving = true; tickFollower(); }
+  clearTimeout(cursorTimer);
+  cursorTimer = setTimeout(() => { cursorMoving = false; }, 100);
 });
 
-// Smooth-follow for ring
-function animateFollower() {
+function tickFollower() {
   fx += (mx - fx) * 0.14;
   fy += (my - fy) * 0.14;
   follower.style.left = fx + 'px';
   follower.style.top  = fy + 'px';
-  requestAnimationFrame(animateFollower);
+  if (cursorMoving) requestAnimationFrame(tickFollower);
 }
-animateFollower();
 
 document.querySelectorAll('a, button, [role="button"]').forEach(el => {
   el.addEventListener('mouseenter', () => follower.classList.add('hovered'));
   el.addEventListener('mouseleave', () => follower.classList.remove('hovered'));
+});
+
+/* ── Dark Mode Toggle ─────────────────────────────── */
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Apply saved theme or system preference
+if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
 });
 
 /* ── Scrolled Nav ─────────────────────────────────── */

@@ -15,14 +15,22 @@
     href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Lucide Icons removed — using Font Awesome only -->
-  <!-- Font Awesome (social icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Font Awesome (solid + brands only) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
 </head>
 
 <body>
@@ -40,7 +48,7 @@
   <!-- ─── Nav ─────────────────────────────────────────── -->
   <header class="nav" id="nav">
     <div class="nav-inner container">
-      <a href="#hero" class="nav-logo">E-Portfolio<span class="dot">.</span></a>
+      <a href="#hero" class="nav-logo"><i class="fa-solid fa-cat nav-cat"></i> E-Portfolio<span class="dot">.</span></a>
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
         <a href="#about" class="nav-link">About</a>
         <a href="#skills" class="nav-link">Skills</a>
@@ -48,6 +56,10 @@
         <a href="#reflection" class="nav-link">Reflection</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+      </button>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <i class="fa-solid fa-grip nav-toggle-icon" id="navToggleIcon"></i>
       </button>
@@ -132,22 +144,22 @@
     <!-- ─── Hero ─────────────────────────────────────── -->
     <section class="hero" id="hero">
       <div class="hero-inner container">
-        <div class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> 2nd Year Student</div>
-        <h1 class="hero-name" id="heroName">Jasmine Bracamonte</h1>
-        <p class="hero-role">
+        <div class="hero-badge" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-wand-magic-sparkles"></i> 2nd Year Student</div>
+        <h1 class="hero-name" id="heroName" data-aos="fade-up" data-aos-delay="200">Jasmine Bracamonte</h1>
+        <p class="hero-role" data-aos="fade-up" data-aos-delay="300">
           <span class="role-static">Taking the&nbsp;</span>
           <span class="role-dynamic" id="roleDynamic"></span>
         </p>
-        <p class="hero-sub">
+        <p class="hero-sub" data-aos="fade-up" data-aos-delay="400">
           I'm an enthusiastic and dedicated second-year Bachelor of Secondary Education Major in Social Studies student
           at Samar State University. I am passionate about social sciences, education, and leveraging technology to
           create engaging learning experiences.
         </p>
-        <div class="hero-actions">
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
           <a href="#about" class="btn btn-primary">About Me</a>
           <a href="#reflection" class="btn btn-ghost">My Reflections</a>
         </div>
-        <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll" aria-hidden="true" data-aos="fade-up" data-aos-delay="700">
           <span class="scroll-line"></span>
           <span class="scroll-text">scroll</span>
         </div>
@@ -161,7 +173,7 @@
         <div class="about-grid">
           <div class="about-image-wrap" data-aos="fade-right" data-aos-delay="100">
             <div class="about-img-frame">
-              <img src="Jasmine.jpeg" alt="Alex Rivera portrait" class="about-img" />
+              <img src="Jasmine.webp" alt="Jasmine Bracamonte portrait" class="about-img" />
               <div class="about-img-accent" aria-hidden="true"></div>
             </div>
             <div class="about-stat-card glass" data-aos="fade-up" data-aos-delay="300">
@@ -301,7 +313,7 @@
 
           <div class="exp-card glass" data-aos="fade-up" data-aos-delay="100">
             <div class="exp-img-wrap">
-              <img src="Demo.jpg" alt="Experience 1" class="exp-img" loading="lazy" />
+              <img src="Demo.webp" alt="Experience 1" class="exp-img" loading="lazy" />
               <span class="exp-date-badge">2026 (Present)</span>
             </div>
             <div class="exp-body">
@@ -319,7 +331,7 @@
 
           <div class="exp-card glass" data-aos="fade-up" data-aos-delay="200">
             <div class="exp-img-wrap">
-              <img src="Commuinity-Service.jpg" Experience 2" class="exp-img" loading="lazy" />
+              <img src="Commuinity-Service.webp" alt="Experience 2" class="exp-img" loading="lazy" />
               <span class="exp-date-badge">2026 (Present)</span>
             </div>
             <div class="exp-body">
@@ -335,8 +347,7 @@
 
           <div class="exp-card glass" data-aos="fade-up" data-aos-delay="300">
             <div class="exp-img-wrap">
-              <img src="Seminar-.jpg" alt="Experience 3"
-                class="exp-img" loading="lazy" />
+              <img src="Seminar-.webp" alt="Experience 3" class="exp-img" loading="lazy" />
               <span class="exp-date-badge">2026 (Present)</span>
             </div>
             <div class="exp-body">
@@ -351,8 +362,7 @@
 
               <div class="exp-card glass" data-aos="fade-up" data-aos-delay="300">
             <div class="exp-img-wrap">
-              <img src="Seminar-Workshop.jpg" alt="Experience 3"
-                class="exp-img" loading="lazy" />
+              <img src="Seminar-Workshop.webp" alt="Experience 4" class="exp-img" loading="lazy" />
               <span class="exp-date-badge">2023 - 2024</span>
             </div>
             <div class="exp-body">
@@ -550,8 +560,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

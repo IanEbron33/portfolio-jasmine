@@ -1,9 +1,43 @@
+/* ── Modal Helpers ────────────────────────────────── */
+const modalOverlay = document.getElementById('modalOverlay');
+const modalClose   = document.getElementById('modalClose');
+
+function openModal() {
+  if (!modalOverlay) return;
+  modalOverlay.setAttribute('aria-hidden', 'false');
+  modalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Focus the close button for accessibility
+  if (modalClose) setTimeout(() => modalClose.focus(), 50);
+}
+
+function closeModal() {
+  if (!modalOverlay) return;
+  modalOverlay.classList.remove('open');
+  // Wait for CSS animation before hiding
+  setTimeout(() => {
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }, 220);
+}
+
+if (modalClose) modalClose.addEventListener('click', closeModal);
+if (modalOverlay) {
+  modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeModal();
+  });
+}
+// Close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('open')) closeModal();
+});
+
 /* ── Contact Form ─────────────────────────────────── */
 const form      = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const formMsg   = document.getElementById('formSuccess');
 
-if (form && submitBtn && formMsg) {
+if (form && submitBtn) {
   form.addEventListener('submit', e => {
     e.preventDefault();
     const btnText = submitBtn.querySelector('.btn-text');
@@ -13,10 +47,9 @@ if (form && submitBtn && formMsg) {
     setTimeout(() => {
       btnText.textContent = 'Send Message';
       submitBtn.disabled = false;
-      formMsg.textContent = 'Message sent! I\'ll get back to you soon.';
       form.reset();
-      setTimeout(() => { formMsg.textContent = ''; }, 4000);
-    }, 1600);
+      openModal();
+    }, 900);
   });
 }
 

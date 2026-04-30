@@ -170,3 +170,140 @@ a.contact-value:hover {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
+
+/* ══════════════════════════════════════════════════════
+   PIXEL MODAL
+══════════════════════════════════════════════════════ */
+.pixel-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(26, 0, 16, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s steps(4);
+}
+
+.pixel-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Modal Box ──────────────────────────────────────── */
+.pixel-modal {
+  background: var(--bg);
+  border: 4px solid var(--accent);
+  box-shadow:
+    8px 8px 0 var(--border-dark),
+    0 0 0 2px var(--bg);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(16px) scale(0.96);
+  transition: transform 0.2s steps(4);
+  overflow: hidden;
+}
+
+.pixel-modal-overlay.open .pixel-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.pixel-modal-header {
+  background: var(--accent);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 3px solid var(--border-dark);
+}
+
+@keyframes modalIconBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.pixel-modal-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  animation: modalIconBlink 1s steps(1) infinite;
+  display: flex;
+  align-items: center;
+}
+
+.pixel-modal-title {
+  font-family: var(--font-disp);
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Body ───────────────────────────────────────────── */
+.pixel-modal-body {
+  padding: 28px 24px 20px;
+  text-align: center;
+  border-bottom: 3px solid var(--border);
+}
+
+.pixel-modal-msg {
+  font-family: var(--font-disp);
+  font-size: 0.62rem;
+  color: var(--text);
+  line-height: 2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.pixel-modal-sub {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+.pixel-modal-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-2);
+}
+
+.pixel-modal-close {
+  min-width: 120px;
+  justify-content: center;
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .pixel-modal {
+    max-width: 100%;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 var(--border-dark);
+  }
+
+  .pixel-modal-title {
+    font-size: 0.52rem;
+  }
+
+  .pixel-modal-msg {
+    font-size: 0.52rem;
+  }
+
+  .pixel-modal-body {
+    padding: 22px 16px 16px;
+  }
+
+  .pixel-modal-footer {
+    padding: 14px 16px;
+  }
+}

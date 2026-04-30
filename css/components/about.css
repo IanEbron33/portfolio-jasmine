@@ -99,22 +99,87 @@
 .about-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 28px;
 }
 
 .tag {
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 0;
-  background: var(--accent-soft);
-  border: 2px solid var(--accent);
-  box-shadow: 2px 2px 0 var(--border-dark);
   font-family: var(--font-disp);
-  font-size: 0.42rem;
+  font-size: 0.4rem;
   font-weight: 400;
-  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  border: 2px solid;
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
+}
+
+.tag:hover {
+  transform: translate(2px, 2px);
+}
+
+/* ── Tag Color 1 — Hot Pink ─────────── */
+.about-tags .tag:nth-child(1) {
+  background: #fce7f3;
+  color: #c01f6a;
+  border-color: #c01f6a;
+  box-shadow: 3px 3px 0 #8b0a47;
+}
+.about-tags .tag:nth-child(1):hover {
+  box-shadow: 1px 1px 0 #8b0a47;
+}
+
+/* ── Tag Color 2 — Coral Rose ───────── */
+.about-tags .tag:nth-child(2) {
+  background: #fff0ec;
+  color: #c24b3c;
+  border-color: #c24b3c;
+  box-shadow: 3px 3px 0 #8a2516;
+}
+.about-tags .tag:nth-child(2):hover {
+  box-shadow: 1px 1px 0 #8a2516;
+}
+
+/* ── Tag Color 3 — Violet Purple ───── */
+.about-tags .tag:nth-child(3) {
+  background: #f3e8ff;
+  color: #7c3aed;
+  border-color: #7c3aed;
+  box-shadow: 3px 3px 0 #4c1d95;
+}
+.about-tags .tag:nth-child(3):hover {
+  box-shadow: 1px 1px 0 #4c1d95;
+}
+
+/* ── Tag Color 4 — Deep Rose ────────── */
+.about-tags .tag:nth-child(4) {
+  background: #ffe4f0;
+  color: #be185d;
+  border-color: #be185d;
+  box-shadow: 3px 3px 0 #831843;
+}
+.about-tags .tag:nth-child(4):hover {
+  box-shadow: 1px 1px 0 #831843;
+}
+
+/* ── Tag Color 5 — Teal/Cyan accent ── */
+.about-tags .tag:nth-child(5) {
+  background: #e0f7f4;
+  color: #0f766e;
+  border-color: #0f766e;
+  box-shadow: 3px 3px 0 #064e3b;
+}
+.about-tags .tag:nth-child(5):hover {
+  box-shadow: 1px 1px 0 #064e3b;
+}
+
+/* ── Tag Color 6+ fallback ────────────── */
+.about-tags .tag:nth-child(n+6) {
+  background: #fce7f3;
+  color: #e0277a;
+  border-color: #e0277a;
+  box-shadow: 3px 3px 0 #9b1255;
 }
 
 .tag--sm {

@@ -1,4 +1,4 @@
-﻿/* â”€â”€ Projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Projects ─────────────────────────────────────────── */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -7,41 +7,45 @@
 
 .project-card {
   overflow: hidden;
-  transition: transform var(--trans), box-shadow var(--trans);
+  border: 3px solid var(--border);
+  background: var(--glass-bg);
+  box-shadow: 6px 6px 0px var(--border-dark);
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(224, 39, 122, 0.15);
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px var(--border-dark);
 }
 
 .project-img-wrap {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16/9;
+  border-bottom: 3px solid var(--border);
 }
 
 .project-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s steps(3);
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(44, 13, 30, 0.65);
+  background: rgba(44, 13, 30, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   opacity: 0;
-  transition: opacity var(--trans);
+  transition: opacity 0.1s steps(1);
 }
 
 .project-card:hover .project-overlay {
@@ -51,28 +55,24 @@
 .project-link-btn {
   width: 42px;
   height: 42px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  background: var(--accent);
+  border: 3px solid #fff;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  transition: background var(--trans), transform var(--trans);
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
 }
 
 .project-link-btn:hover {
-  background: var(--accent);
-  transform: scale(1.1);
-}
-
-.project-link-btn svg {
-  width: 18px;
-  height: 18px;
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.4);
 }
 
 .project-body {
-  padding: 20px 22px;
+  padding: 18px 20px;
 }
 
 .project-tags {
@@ -83,16 +83,20 @@
 }
 
 .project-title {
-  font-weight: 800;
-  font-size: 1.05rem;
+  font-family: var(--font-disp);
+  font-size: 0.52rem;
+  font-weight: 400;
   margin-bottom: 8px;
   color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
 }
 
 .project-desc {
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
   color: var(--text-2);
   line-height: 1.7;
-  font-weight: 500;
+  font-weight: 400;
 }
-

@@ -1,58 +1,58 @@
-﻿/* â”€â”€ Buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Pixel Buttons ──────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: 99px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  transition: transform var(--trans), box-shadow var(--trans), background var(--trans);
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 0;
+  font-family: var(--font-disp);
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
   position: relative;
-  overflow: hidden;
-  letter-spacing: 0.01em;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.2);
-  opacity: 0;
-  transition: opacity var(--trans);
-}
-
-.btn:hover::before {
-  opacity: 1;
+  text-transform: uppercase;
+  border: 3px solid var(--border-dark);
+  cursor: none;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translate(2px, 2px);
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translate(4px, 4px);
 }
 
 .btn-primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 4px 20px var(--accent-glow);
+  box-shadow: 4px 4px 0px var(--border-dark);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 8px 32px var(--accent-glow);
+  box-shadow: 2px 2px 0px var(--border-dark);
+  background: #c01f6a;
+}
+
+.btn-primary:active {
+  box-shadow: 0px 0px 0px var(--border-dark);
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--accent);
-  border: 2px solid var(--accent-2);
+  border: 3px solid var(--accent);
+  box-shadow: 4px 4px 0px var(--border-dark);
 }
 
 .btn-ghost:hover {
-  border-color: var(--accent);
+  box-shadow: 2px 2px 0px var(--border-dark);
   background: var(--accent-soft);
+}
+
+.btn-ghost:active {
+  box-shadow: 0px 0px 0px var(--border-dark);
 }
 
 .btn--full {
@@ -60,7 +60,7 @@
   justify-content: center;
 }
 
-/* â”€â”€ Section Shared â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Section Shared ─────────────────────────────────── */
 .section {
   position: relative;
   z-index: 1;
@@ -69,30 +69,41 @@
 
 .section--dark {
   background: var(--bg-2);
+  border-top: 3px solid var(--border);
+  border-bottom: 3px solid var(--border);
 }
 
+/* ── Section Label (Pixel Style) ───────────────────── */
 .section-label {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  font-weight: 700;
+  gap: 8px;
+  font-family: var(--font-disp);
+  font-size: 0.5rem;
+  font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
+  padding: 6px 14px;
+  box-shadow: 3px 3px 0px var(--border-dark);
 }
+
+.section-label::before { content: '> '; }
 
 .section-label .lbl-icon {
   font-size: 0.85rem;
 }
 
+/* ── Section Title ──────────────────────────────────── */
 .section-title {
   font-family: var(--font-disp);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
   color: var(--text);
   margin-bottom: 40px;
 }
@@ -100,4 +111,3 @@
 .section-title.centered {
   text-align: center;
 }
-

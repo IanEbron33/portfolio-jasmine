@@ -1,4 +1,4 @@
-﻿/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Hero ─────────────────────────────────────────────── */
 .hero {
   position: relative;
   z-index: 1;
@@ -9,58 +9,63 @@
 }
 
 .hero-inner {
-  max-width: 720px;
+  max-width: 760px;
 }
 
+/* ── Hero Badge ─────────────────────────────────────── */
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 16px;
-  border-radius: 99px;
-  background: var(--accent-soft);
-  border: 1px solid rgba(224, 39, 122, 0.25);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 24px;
-  letter-spacing: 0.04em;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 0;
+  background: var(--accent);
+  border: 3px solid var(--border-dark);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  font-family: var(--font-disp);
+  font-size: 0.45rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 28px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes pixelBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 .hero-badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2s infinite;
+  content: '★';
+  font-size: 0.7rem;
+  animation: pixelBlink 1s steps(1) infinite;
 }
 
-@keyframes pulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(224, 39, 122, 0.5);
-  }
-
-  50% {
-    box-shadow: 0 0 0 7px rgba(224, 39, 122, 0);
-  }
-}
-
+/* ── Hero Name ──────────────────────────────────────── */
 .hero-name {
   font-family: var(--font-disp);
-  font-size: clamp(3rem, 9vw, 6rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.4rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   color: var(--text);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  text-shadow:
+    4px 0 0 var(--accent-soft),
+    -1px 0 0 var(--accent-soft);
 }
 
+/* Pixel name underline accent */
+.hero-name span {
+  color: var(--accent);
+}
+
+/* ── Hero Role ──────────────────────────────────────── */
 .hero-role {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
   color: var(--text-2);
   margin-bottom: 20px;
   min-height: 2em;
@@ -68,75 +73,78 @@
 
 .role-dynamic {
   color: var(--accent);
-  font-weight: 700;
-  border-right: 2px solid var(--accent);
-  animation: blink 0.9s step-end infinite;
+  font-weight: 400;
+  border-right: 3px solid var(--accent);
+  padding-right: 2px;
+  animation: pixelBlink 0.8s steps(1) infinite;
 }
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
+/* ── Hero Sub ───────────────────────────────────────── */
 .hero-sub {
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
   color: var(--text-2);
-  max-width: 520px;
-  line-height: 1.8;
-  margin-bottom: 36px;
-  font-weight: 500;
+  max-width: 540px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+  font-weight: 400;
+  border-left: 4px solid var(--accent);
+  padding-left: 16px;
+  background: var(--accent-soft);
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-left: 5px solid var(--accent);
 }
 
+/* ── Hero Actions ───────────────────────────────────── */
 .hero-actions {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 64px;
 }
 
+/* ── Scroll Indicator ───────────────────────────────── */
 .hero-scroll {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 6px;
+}
+
+@keyframes pixelDropDown {
+  0%   { transform: translateY(0); opacity: 1; }
+  49%  { transform: translateY(12px); opacity: 1; }
+  50%  { transform: translateY(0); opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .scroll-line {
-  display: block;
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-  animation: scrollLine 2s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-@keyframes scrollLine {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-  }
+.scroll-line::before,
+.scroll-line::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 8px;
+  background: var(--accent);
+  animation: pixelDropDown 1.5s steps(4) infinite;
+}
 
-  50% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-
-  51% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-  }
-
-  100% {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
+.scroll-line::after {
+  animation-delay: 0.3s;
+  opacity: 0.5;
 }
 
 .scroll-text {
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  font-family: var(--font-disp);
+  font-size: 0.38rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-3);
-  font-weight: 700;
+  font-weight: 400;
 }
-

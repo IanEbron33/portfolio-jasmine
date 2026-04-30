@@ -1,4 +1,4 @@
-﻿/* â”€â”€ FA Icon Sizing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FA Icon Sizing ────────────────────────────────── */
 .social-btn .fa-brands,
 .project-link-btn .fa-brands,
 .project-link-btn .fa-solid {
@@ -15,58 +15,58 @@
 }
 
 .hero-badge .fa-solid {
-  font-size: 12px;
+  font-size: 10px;
 }
 
-/* â”€â”€ Design Tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Design Tokens ─────────────────────────────────── */
 :root {
-  --bg: #fef6fa;
-  --bg-2: #fff0f5;
-  --surface: rgba(255, 255, 255, 0.65);
-  --border: rgba(230, 100, 160, 0.18);
-  --accent: #e0277a;
-  --accent-2: #f472b6;
+  --bg:          #fff0f7;
+  --bg-2:        #ffe4f2;
+  --surface:     rgba(255, 240, 247, 0.92);
+  --border:      #e0277a;
+  --border-dark: #9b1255;
+  --accent:      #e0277a;
+  --accent-2:    #f472b6;
   --accent-soft: #fce7f3;
   --accent-glow: rgba(224, 39, 122, 0.22);
-  --text: #2c0d1e;
-  --text-2: #7c3f62;
-  --text-3: #c4a0b5;
-  --radius: 18px;
-  --radius-sm: 12px;
-  --radius-lg: 28px;
-  --font-sans: "Quicksand", system-ui, sans-serif;
-  --font-disp: "Fredoka", system-ui, sans-serif;
-  --trans: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow: 0 8px 32px rgba(224, 39, 122, 0.10);
-  --glow: 0 0 60px rgba(224, 39, 122, 0.14);
+  --text:        #1a0010;
+  --text-2:      #6b1040;
+  --text-3:      #b06090;
+  --radius:    0px;
+  --radius-sm: 0px;
+  --radius-lg: 0px;
+  --font-sans: "VT323", monospace;
+  --font-disp: "Press Start 2P", monospace;
+  --trans:       0.1s steps(2, end);
+  --shadow:      4px 4px 0px #9b1255;
+  --glow:        0 0 0px transparent;
+  --pixel-size:  3px;
 
-  /* dark mode surfaces (referenced in overrides) */
-  --nav-bg: rgba(254, 246, 250, 0.55);
-  --nav-bg-scroll: rgba(254, 246, 250, 0.88);
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --mobile-menu-bg: rgba(254, 246, 250, 0.98);
+  --nav-bg:          rgba(255, 240, 247, 0.96);
+  --nav-bg-scroll:   rgba(255, 240, 247, 0.99);
+  --glass-bg:        rgba(255, 240, 247, 0.95);
+  --mobile-menu-bg:  #fff0f7;
 }
 
-/* â”€â”€ Dark Theme â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Dark Theme ────────────────────────────────────── */
 [data-theme="dark"] {
-  --bg: #140a14;
-  --bg-2: #1c101c;
-  --surface: rgba(40, 22, 40, 0.7);
-  --border: rgba(244, 114, 182, 0.15);
-  --accent: #f472b6;
-  --accent-2: #fb7ebc;
-  --accent-soft: rgba(244, 114, 182, 0.12);
+  --bg:          #1a0010;
+  --bg-2:        #260019;
+  --surface:     rgba(40, 0, 25, 0.95);
+  --border:      #f472b6;
+  --border-dark: #e0277a;
+  --accent:      #f472b6;
+  --accent-2:    #fb7ebc;
+  --accent-soft: rgba(244, 114, 182, 0.15);
   --accent-glow: rgba(244, 114, 182, 0.3);
-  --text: #f5e8f0;
-  --text-2: #c9a0b8;
-  --text-3: #7a5068;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --glow: 0 0 60px rgba(244, 114, 182, 0.2);
+  --text:        #ffe4f2;
+  --text-2:      #f4a8d0;
+  --text-3:      #a06080;
+  --shadow:      4px 4px 0px #e0277a;
+  --glow:        0 0 0px transparent;
 
-  --nav-bg: rgba(20, 10, 20, 0.6);
-  --nav-bg-scroll: rgba(20, 10, 20, 0.88);
-  --glass-bg: rgba(35, 18, 35, 0.75);
-  --mobile-menu-bg: rgba(20, 10, 20, 0.98);
+  --nav-bg:          rgba(26, 0, 16, 0.98);
+  --nav-bg-scroll:   rgba(26, 0, 16, 0.99);
+  --glass-bg:        rgba(38, 0, 25, 0.96);
+  --mobile-menu-bg:  #1a0010;
 }
-
-

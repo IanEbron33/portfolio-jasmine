@@ -1,68 +1,74 @@
-﻿/* â”€â”€ Skills â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Skills ──────────────────────────────────────────── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
 .skill-card {
-  padding: 28px 24px;
-  transition: transform var(--trans), box-shadow var(--trans);
+  padding: 24px 20px;
+  border: 3px solid var(--border);
+  background: var(--glass-bg);
+  box-shadow: 5px 5px 0px var(--border-dark);
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px var(--border-dark);
 }
 
+/* ── Skill Icon ─────────────────────────────────────── */
 .skill-icon-wrap {
   width: 48px;
   height: 48px;
-  border-radius: 14px;
+  border-radius: 0;
   background: var(--accent-soft);
+  border: 3px solid var(--accent);
+  box-shadow: 3px 3px 0 var(--border-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   color: var(--accent);
-}
-
-.skill-icon-wrap svg {
-  width: 22px;
-  height: 22px;
-  stroke-width: 2;
 }
 
 .skill-icon-wrap .fa-solid,
 .skill-icon-wrap .fa-brands {
-  font-size: 20px;
+  font-size: 18px;
 }
 
+/* ── Skill Name ─────────────────────────────────────── */
 .skill-name {
-  font-weight: 800;
-  font-size: 1rem;
+  font-family: var(--font-disp);
+  font-size: 0.55rem;
+  font-weight: 400;
   margin-bottom: 8px;
   color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .skill-desc {
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
   color: var(--text-2);
   line-height: 1.65;
-  margin-bottom: 20px;
-  font-weight: 500;
+  margin-bottom: 16px;
+  font-weight: 400;
 }
 
 .skill-bar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .skill-bar-label {
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-family: var(--font-disp);
+  font-size: 0.38rem;
+  font-weight: 400;
   color: var(--text-3);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -70,26 +76,34 @@
 
 .skill-pct {
   font-family: var(--font-disp);
-  font-size: 0.9rem;
-  font-weight: 800;
+  font-size: 0.5rem;
+  font-weight: 400;
   color: var(--accent);
-  min-width: 2.6ch;
+  min-width: 3ch;
   text-align: right;
-  transition: color var(--trans);
 }
 
+/* ── Pixel Skill Bar (Segmented) ───────────────────── */
 .skill-bar-wrap {
-  height: 6px;
-  background: rgba(224, 39, 122, 0.1);
-  border-radius: 99px;
+  height: 14px;
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
   overflow: hidden;
+  display: flex;
+  gap: 2px;
+  padding: 2px;
 }
 
 .skill-bar {
   height: 100%;
   width: 0;
-  border-radius: 99px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--accent);
+  transition: width 1.2s steps(20);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    rgba(255,255,255,0.2) 8px,
+    rgba(255,255,255,0.2) 10px
+  );
 }
-

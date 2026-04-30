@@ -1,23 +1,19 @@
-﻿/* â”€â”€ Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Nav ─────────────────────────────────────────────── */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 16px 0;
+  padding: 12px 0;
   background: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: background var(--trans), border-bottom var(--trans), padding var(--trans), backdrop-filter var(--trans);
+  border-bottom: 3px solid var(--border);
+  box-shadow: 0 3px 0 var(--border-dark);
+  transition: background 0.2s ease;
 }
 
 .nav.scrolled {
   background: var(--nav-bg-scroll);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
-  padding: 11px 0;
 }
 
 .nav-inner {
@@ -27,42 +23,33 @@
   gap: 12px;
 }
 
+/* ── Logo ───────────────────────────────────────────── */
 .nav-logo {
   font-family: var(--font-disp);
-  font-size: 1.45rem;
-  font-weight: 700;
+  font-size: 0.65rem;
+  font-weight: 400;
   color: var(--text);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  text-transform: uppercase;
 }
 
-/* cute animated cat */
-@keyframes catBounce {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  20%      { transform: translateY(-3px) rotate(-4deg); }
-  40%      { transform: translateY(0) rotate(0deg); }
-  60%      { transform: translateY(-2px) rotate(3deg); }
-  80%      { transform: translateY(0) rotate(0deg); }
+@keyframes catBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
-@keyframes catWiggle {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  15%      { transform: rotate(-12deg) scale(1.15); }
-  30%      { transform: rotate(10deg) scale(1.15); }
-  45%      { transform: rotate(-8deg) scale(1.1); }
-  60%      { transform: rotate(6deg) scale(1.1); }
-  75%      { transform: rotate(-3deg) scale(1.05); }
-}
+
 .nav-cat {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--accent);
-  animation: catBounce 2.5s ease-in-out infinite;
-  transition: color 0.3s;
+  animation: catBlink 1.2s steps(1) infinite;
   display: inline-block;
 }
+
 .nav-logo:hover .nav-cat {
-  animation: catWiggle 0.6s ease-in-out;
+  animation: none;
   color: var(--accent-2);
 }
 
@@ -70,95 +57,91 @@
   color: var(--accent);
 }
 
+/* ── Nav Links ──────────────────────────────────────── */
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: 32px;
 }
 
 .nav-link {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-family: var(--font-disp);
+  font-size: 0.5rem;
+  font-weight: 400;
   color: var(--text-2);
   position: relative;
-  transition: color var(--trans);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 0;
+  transition: color 0.1s steps(1);
 }
 
-.nav-link::after {
+.nav-link::before {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--accent-2);
+  background: var(--accent);
   transform: scaleX(0);
-  transform-origin: right;
-  border-radius: 99px;
-  transition: transform var(--trans);
+  transform-origin: left;
+  transition: transform 0.1s steps(3);
 }
 
 .nav-link:hover {
   color: var(--accent);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::before {
   transform: scaleX(1);
-  transform-origin: left;
 }
 
+/* ── Toggle Button ──────────────────────────────────── */
 .nav-toggle {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
   background: var(--accent-soft);
-  border: 1.5px solid rgba(224, 39, 122, 0.3);
+  border: 3px solid var(--accent);
   color: var(--accent);
-  box-shadow: 0 2px 14px rgba(224, 39, 122, 0.22);
-  transition: background var(--trans), transform var(--trans), border-color var(--trans), box-shadow var(--trans);
+  box-shadow: 3px 3px 0 var(--border-dark);
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
   line-height: 1;
 }
 
 .nav-toggle:hover {
-  background: rgba(224, 39, 122, 0.14);
-  border-color: var(--accent);
-  transform: scale(1.07);
-  box-shadow: 0 4px 20px rgba(224, 39, 122, 0.32);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--border-dark);
+}
+
+.nav-toggle.open .nav-toggle-icon {
+  transform: rotate(45deg);
 }
 
 .nav-toggle-icon {
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1em;
-  height: 1em;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.1s steps(2);
 }
 
-.nav-toggle.open .nav-toggle-icon {
-  transform: rotate(90deg) scale(1.1);
-}
-
-/* â”€â”€ Mobile Menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Mobile Menu ────────────────────────────────────── */
 .mobile-menu {
   position: fixed;
   inset: 0;
   z-index: 99;
   background: var(--mobile-menu-bg);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
   display: flex;
   flex-direction: column;
   padding: 0 20px 32px;
   transform: translateX(100%);
   visibility: hidden;
   pointer-events: none;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.45s;
+  transition: transform 0.25s steps(8), visibility 0.25s;
   overflow-y: auto;
   overflow-x: hidden;
+  border-left: 4px solid var(--accent);
 }
 
 .mobile-menu.open {
@@ -167,10 +150,10 @@
   pointer-events: auto;
 }
 
-/* header */
+/* ── Mobile Header ──────────────────────────────────── */
 .mobile-menu-header {
-  padding: 72px 4px 28px;
-  border-bottom: 1px solid var(--border);
+  padding: 72px 4px 24px;
+  border-bottom: 3px solid var(--border);
   margin-bottom: 16px;
 }
 
@@ -181,13 +164,14 @@
 }
 
 .mobile-brand-icon {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--accent);
   background: var(--accent-soft);
-  border: 1.5px solid rgba(224, 39, 122, 0.2);
+  border: 3px solid var(--accent);
+  box-shadow: 3px 3px 0 var(--border-dark);
   width: 48px;
   height: 48px;
-  border-radius: 14px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,22 +179,23 @@
 
 .mobile-brand-name {
   font-family: var(--font-disp);
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 400;
   color: var(--text);
-  line-height: 1;
+  line-height: 1.4;
 }
 
 .mobile-brand-sub {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--text-3);
+  font-family: var(--font-disp);
+  font-size: 0.45rem;
+  font-weight: 400;
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
-/* nav list */
+/* ── Mobile Nav List ────────────────────────────────── */
 .mobile-menu-nav {
   display: flex;
   flex-direction: column;
@@ -223,36 +208,34 @@
   align-items: center;
   gap: 14px;
   padding: 14px 16px;
-  border-radius: var(--radius);
+  border-radius: 0;
   background: var(--surface);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+  border: 3px solid var(--border);
+  box-shadow: 3px 3px 0 var(--border-dark);
   color: var(--text);
   text-decoration: none;
-  transition: background var(--trans), border-color var(--trans), transform var(--trans);
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
 }
 
 .mobile-link:hover,
 .mobile-link:focus {
   background: var(--accent-soft);
-  border-color: rgba(224, 39, 122, 0.3);
-  transform: translateX(4px);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--border-dark);
 }
 
-/* icon pill */
 .mobile-link-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 0;
   flex-shrink: 0;
   background: var(--accent-soft);
-  border: 1.5px solid rgba(224, 39, 122, 0.18);
+  border: 2px solid var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent);
-  font-size: 0.95rem;
-  transition: background var(--trans), color var(--trans);
+  font-size: 0.9rem;
 }
 
 .mobile-link:hover .mobile-link-icon {
@@ -260,7 +243,6 @@
   color: #fff;
 }
 
-/* text stack */
 .mobile-link-text {
   display: flex;
   flex-direction: column;
@@ -270,34 +252,29 @@
 
 .mobile-link-label {
   font-family: var(--font-disp);
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 0.55rem;
+  font-weight: 400;
   color: var(--text);
-  line-height: 1;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .mobile-link-sub {
-  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   color: var(--text-3);
-  font-weight: 600;
+  font-weight: 400;
 }
 
-/* chevron */
 .mobile-link-arrow {
   font-size: 0.75rem;
-  color: var(--text-3);
-  transition: transform var(--trans), color var(--trans);
-}
-
-.mobile-link:hover .mobile-link-arrow {
-  transform: translateX(3px);
   color: var(--accent);
 }
 
-/* footer */
+/* ── Mobile Footer ──────────────────────────────────── */
 .mobile-menu-footer {
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  border-top: 3px solid var(--border);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,29 +289,31 @@
 .mobile-social {
   width: 40px;
   height: 40px;
-  border-radius: 12px;
+  border-radius: 0;
   background: var(--accent-soft);
-  border: 1.5px solid rgba(224, 39, 122, 0.18);
+  border: 3px solid var(--accent);
+  box-shadow: 3px 3px 0 var(--border-dark);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent);
   font-size: 0.9rem;
-  transition: background var(--trans), color var(--trans), transform var(--trans);
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
 }
 
 .mobile-social:hover {
   background: var(--accent);
   color: #fff;
-  transform: translateY(-2px);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--border-dark);
 }
 
 .mobile-copy {
-  font-size: 0.72rem;
+  font-family: var(--font-disp);
+  font-size: 0.42rem;
   color: var(--text-3);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-align: center;
+  text-transform: uppercase;
 }
-
-

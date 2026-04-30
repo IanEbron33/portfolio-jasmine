@@ -1,9 +1,10 @@
-﻿/* â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Footer ──────────────────────────────────────────── */
 .footer {
   position: relative;
   z-index: 1;
-  padding: 32px 0;
-  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  border-top: 4px solid var(--border);
+  background: var(--bg-2);
 }
 
 .footer-inner {
@@ -15,32 +16,31 @@
 }
 
 .footer-copy {
-  font-size: 0.82rem;
+  font-family: var(--font-disp);
+  font-size: 0.38rem;
   color: var(--text-3);
-  font-weight: 600;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .footer-top {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  border: 1.5px solid var(--border);
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  border: 3px solid var(--border);
+  background: var(--glass-bg);
+  box-shadow: 4px 4px 0 var(--border-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-2);
-  transition: border-color var(--trans), color var(--trans), transform var(--trans), background var(--trans);
-}
-
-.footer-top svg {
-  width: 18px;
-  height: 18px;
+  color: var(--accent);
+  transition: transform 0.08s steps(1), box-shadow 0.08s steps(1);
 }
 
 .footer-top:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-soft);
-  transform: translateY(-3px);
+  background: var(--accent);
+  color: #fff;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--border-dark);
 }
-

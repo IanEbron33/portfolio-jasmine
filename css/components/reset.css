@@ -63,19 +63,21 @@ ul {
   border: 2px solid var(--bg);
 }
 
-/* ── Scroll Reveal ──────────────────────────────────── */
+/* ── Scroll Reveal (Retro Pixel Snap) ─────────── */
 [data-aos] {
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* 8-bit jittery step animation */
+  transition: opacity 0.35s steps(4, end), transform 0.35s steps(4, end);
   will-change: opacity, transform;
   pointer-events: none;
 }
-[data-aos="fade-up"]    { transform: translateY(20px); }
-[data-aos="fade-left"]  { transform: translateX(20px); }
-[data-aos="fade-right"] { transform: translateX(-20px); }
+[data-aos="fade-up"]    { transform: translateY(32px); }
+[data-aos="fade-left"]  { transform: translateX(32px); }
+[data-aos="fade-right"] { transform: translateX(-32px); }
 
 [data-aos].aos-animate {
   opacity: 1;
   transform: translateY(0) translateX(0);
   pointer-events: auto;
 }
+

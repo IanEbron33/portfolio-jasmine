@@ -156,3 +156,54 @@
 .reflection-body p:last-child {
   margin-bottom: 0;
 }
+
+/* ── Reflection Image + Text Layout ────────────────── */
+.reflection-content {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.reflection-img-wrap {
+  position: relative;
+  flex-shrink: 0;
+  border: 3px solid var(--accent);
+  box-shadow: 5px 5px 0 var(--border-dark);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+/* Pixel corner marks */
+.reflection-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 70%, rgba(224, 39, 122, 0.25));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.reflection-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: auto;
+  transition: transform 0.3s steps(3);
+}
+
+.reflection-img-wrap:hover .reflection-img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 700px) {
+  .reflection-content {
+    grid-template-columns: 1fr;
+  }
+
+  .reflection-img-wrap {
+    aspect-ratio: 16/7;
+    width: 100%;
+  }
+}
